@@ -11,9 +11,10 @@ import torch.nn.functional as F
 import numpy as np
 import cv2
 
-# 让 backend 找到项目根目录中的 train_mnist.py / preprocess_image.py / models
+# 获取当前 app.py 所在的目录（在 Render 上就是 backend 目录）
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_DIR = os.path.dirname(BASE_DIR)
+# 把 PROJECT_DIR 也指向当前目录
+PROJECT_DIR = BASE_DIR
 sys.path.insert(0, PROJECT_DIR)
 
 from train_mnist import CNN
